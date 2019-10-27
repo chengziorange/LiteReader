@@ -33,6 +33,7 @@
     -->
     <list>
         <mapping class="top.orange233.litereader.bean.SearchHistoryBean" />
+        <mapping class="top.orange233.litereader.bean.ShelfBookBean" />
     </list>
 
     <!--

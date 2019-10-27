@@ -22,7 +22,9 @@ import top.orange233.litereader.bean.FuzzySearchResultBean;
 import top.orange233.litereader.bean.SearchHistoryBean;
 import top.orange233.litereader.presenter.SearchBookPresenter;
 import top.orange233.litereader.presenter.contract.SearchBookContract;
-import top.orange233.litereader.view.adapter.FuzzySearchBookAdapter;
+import top.orange233.litereader.util.Callback;
+import top.orange233.litereader.view.adapter.FuzzySearchBookRecyclerAdapter;
+import top.orange233.litereader.view.fragment.BookDetailDialogFragment;
 import tyrantgit.explosionfield.ExplosionField;
 
 public class SearchBookActivity extends BaseActivity<SearchBookPresenter> implements SearchBookContract.View {
@@ -38,7 +40,7 @@ public class SearchBookActivity extends BaseActivity<SearchBookPresenter> implem
     @BindView(R.id.tv_clear_history)
     TextView tvClearHistory;
 
-    FuzzySearchBookAdapter rvAdapter;
+    FuzzySearchBookRecyclerAdapter rvAdapter;
     ExplosionField mExplosionField;
 
     // 创建 Activity 时的初始化
@@ -163,7 +165,17 @@ public class SearchBookActivity extends BaseActivity<SearchBookPresenter> implem
 
     // 初始化 RecyclerView
     private void initRecyclerView() {
-        rvAdapter = new FuzzySearchBookAdapter();
+        rvAdapter = new FuzzySearchBookRecyclerAdapter(new Callback<View, Boolean>() {
+            @Override
+            public void onSuccess(View data) {
+                new BookDetailDialogFragment((FuzzySearchResultBean.BooksBean)data.getTag()).show(getSupportFragmentManager(),"BookDetail");
+            }
+
+            @Override
+            public void onFail(Boolean data) {
+
+            }
+        });
         LinearLayoutManager llm = new LinearLayoutManager(this);
         DividerItemDecoration did = new DividerItemDecoration(recyclerView.getContext(), llm.getOrientation());
         recyclerView.addItemDecoration(did);

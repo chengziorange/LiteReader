@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="280dp"
+    android:layout_height="350dp"
+    android:layout_gravity="center">
+
+    <ImageView
+        android:id="@+id/iv_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/defult_book_wrapper" />
+
+    <RelativeLayout
+        android:id="@+id/rl_hold_book_info"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@android:color/transparent"
+        android:backgroundTint="@android:color/transparent">
+
+        <ImageView
+            android:id="@+id/iv_book_wrapper"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            app:srcCompat="@drawable/defult_book_wrapper" />
+
+        <TextView
+            android:id="@+id/tv_book_title"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_toEndOf="@id/iv_book_wrapper"
+            android:singleLine="true"
+            android:text="书名" />
+
+        <TextView
+            android:id="@+id/tv_book_author"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_below="@id/tv_book_title"
+            android:layout_toEndOf="@id/iv_book_wrapper"
+            android:singleLine="true"
+            android:text="作者" />
+
+        <TextView
+            android:id="@+id/tv_category"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_below="@id/tv_book_author"
+            android:layout_toEndOf="@id/iv_book_wrapper"
+            android:singleLine="true"
+            android:text="分类" />
+
+        <TextView
+            android:id="@+id/tv_last_chapter"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_below="@id/tv_category"
+            android:layout_toEndOf="@id/iv_book_wrapper"
+            android:singleLine="true"
+            android:text="最新章节" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_short_intro"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/rl_hold_book_info"
+        android:layout_alignParentStart="true"
+        android:background="@android:color/background_light"
+        android:inputType="textMultiLine"
+        android:text="书籍简介" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tv_short_intro"
+        android:layout_alignParentStart="true"
+        android:background="@android:color/background_light">
+
+        <Button
+            android:id="@+id/btn_add_to_shelf"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:text="加入书架" />
+
+        <Button
+            android:id="@+id/btn_start_reading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/btn_add_to_shelf"
+            android:text="开始阅读" />
+    </RelativeLayout>
+
+</RelativeLayout>

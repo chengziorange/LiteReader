@@ -24,7 +24,7 @@
 
     <TextView
         android:id="@+id/tv_book_author"
-        android:layout_width="200dp"
+        android:layout_width="match_parent"
         android:layout_height="25dp"
         android:layout_below="@id/tv_book_title"
         android:layout_toEndOf="@id/iv_book_wrapper"
@@ -33,33 +33,23 @@
         android:text="作者" />
 
     <TextView
-        android:id="@+id/tv_category"
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_below="@id/tv_book_title"
-        android:layout_toEndOf="@id/tv_book_author"
-        android:gravity="start|center_vertical"
-        android:singleLine="true"
-        android:text="分类" />
-
-    <TextView
-        android:id="@+id/tv_last_chapter"
+        android:id="@+id/tv_read_progress"
         android:layout_width="match_parent"
         android:layout_height="25dp"
         android:layout_below="@id/tv_book_author"
         android:layout_toEndOf="@id/iv_book_wrapper"
         android:gravity="start|center_vertical"
         android:singleLine="true"
-        android:text="最新章节" />
+        android:text="阅读进度" />
 
     <TextView
-        android:id="@+id/tv_short_intro"
+        android:id="@+id/tv_last_chapter"
         android:layout_width="match_parent"
         android:layout_height="25dp"
-        android:layout_below="@id/tv_last_chapter"
+        android:layout_below="@id/tv_read_progress"
         android:layout_toEndOf="@id/iv_book_wrapper"
         android:gravity="start|center_vertical"
         android:singleLine="true"
-        android:text="简介" />
+        android:text="最新章节" />
 
 </RelativeLayout>

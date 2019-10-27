@@ -1,7 +1,9 @@
 package top.orange233.litereader.basemvplib;
 
 import android.os.Bundle;
+import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
@@ -13,7 +15,12 @@ public abstract class BaseFragment<T extends IPresenter> extends Fragment implem
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initPresenter();
-        init();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        init(view);
     }
 
     @Override
@@ -37,5 +44,5 @@ public abstract class BaseFragment<T extends IPresenter> extends Fragment implem
      */
     protected abstract T createPresenter();
 
-    protected abstract void init();
+    protected abstract void init(View view);
 }
